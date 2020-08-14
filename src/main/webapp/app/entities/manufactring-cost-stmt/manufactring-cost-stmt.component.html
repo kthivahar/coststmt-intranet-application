@@ -1,0 +1,93 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.home.title">Manufactring Cost Stmts</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-manufactring-cost-stmt" [routerLink]="['/manufactring-cost-stmt/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.home.createLabel">
+            Create a new Manufactring Cost Stmt
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="manufactringCostStmts?.length === 0">
+        <span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.home.notFound">No manufactringCostStmts found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="manufactringCostStmts && manufactringCostStmts.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="companyName"><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.companyName">Company Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="uniqueEntityNumberUen"><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.uniqueEntityNumberUen">Unique Entity Number Uen</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="address"><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.address">Address</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nameOfContactPerson"><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.nameOfContactPerson">Name Of Contact Person</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="designation"><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.designation">Designation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="contactNo"><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.contactNo">Contact No</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="email"><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.email">Email</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="exporterCompanyName"><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.exporterCompanyName">Exporter Company Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="exporterAddress"><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.exporterAddress">Exporter Address</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="euCompanyName"><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.euCompanyName">Eu Company Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="country"><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.country">Country</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="radio1"><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.radio1">Radio 1</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let manufactringCostStmt of manufactringCostStmts ;trackBy: trackId">
+                    <td><a [routerLink]="['/manufactring-cost-stmt', manufactringCostStmt.id, 'view']">{{ manufactringCostStmt.id }}</a></td>
+                    <td>{{ manufactringCostStmt.companyName }}</td>
+                    <td>{{ manufactringCostStmt.uniqueEntityNumberUen }}</td>
+                    <td>{{ manufactringCostStmt.address }}</td>
+                    <td>{{ manufactringCostStmt.nameOfContactPerson }}</td>
+                    <td>{{ manufactringCostStmt.designation }}</td>
+                    <td>{{ manufactringCostStmt.contactNo }}</td>
+                    <td>{{ manufactringCostStmt.email }}</td>
+                    <td>{{ manufactringCostStmt.exporterCompanyName }}</td>
+                    <td>{{ manufactringCostStmt.exporterAddress }}</td>
+                    <td>{{ manufactringCostStmt.euCompanyName }}</td>
+                    <td>{{ manufactringCostStmt.country }}</td>
+                    <td>{{ manufactringCostStmt.radio1 }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/manufactring-cost-stmt', manufactringCostStmt.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/manufactring-cost-stmt', manufactringCostStmt.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(manufactringCostStmt)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="manufactringCostStmts && manufactringCostStmts.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

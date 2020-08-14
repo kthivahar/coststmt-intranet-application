@@ -1,0 +1,98 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-manufactring-cost-stmt-heading" jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.home.createOrEditLabel">Create or edit a Manufactring Cost Stmt</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.companyName" for="field_companyName">Company Name</label>
+                    <input type="text" class="form-control" name="companyName" id="field_companyName"
+                           formControlName="companyName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.uniqueEntityNumberUen" for="field_uniqueEntityNumberUen">Unique Entity Number Uen</label>
+                    <input type="text" class="form-control" name="uniqueEntityNumberUen" id="field_uniqueEntityNumberUen"
+                           formControlName="uniqueEntityNumberUen"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.address" for="field_address">Address</label>
+                    <input type="text" class="form-control" name="address" id="field_address"
+                           formControlName="address"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.nameOfContactPerson" for="field_nameOfContactPerson">Name Of Contact Person</label>
+                    <input type="text" class="form-control" name="nameOfContactPerson" id="field_nameOfContactPerson"
+                           formControlName="nameOfContactPerson"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.designation" for="field_designation">Designation</label>
+                    <input type="text" class="form-control" name="designation" id="field_designation"
+                           formControlName="designation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.contactNo" for="field_contactNo">Contact No</label>
+                    <input type="text" class="form-control" name="contactNo" id="field_contactNo"
+                           formControlName="contactNo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.exporterCompanyName" for="field_exporterCompanyName">Exporter Company Name</label>
+                    <input type="text" class="form-control" name="exporterCompanyName" id="field_exporterCompanyName"
+                           formControlName="exporterCompanyName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.exporterAddress" for="field_exporterAddress">Exporter Address</label>
+                    <input type="text" class="form-control" name="exporterAddress" id="field_exporterAddress"
+                           formControlName="exporterAddress"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.euCompanyName" for="field_euCompanyName">Eu Company Name</label>
+                    <input type="text" class="form-control" name="euCompanyName" id="field_euCompanyName"
+                           formControlName="euCompanyName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.country" for="field_country">Country</label>
+                    <input type="text" class="form-control" name="country" id="field_country"
+                           formControlName="country"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.radio1" for="field_radio1">Radio 1</label>
+                    <input type="text" class="form-control" name="radio1" id="field_radio1"
+                           formControlName="radio1"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

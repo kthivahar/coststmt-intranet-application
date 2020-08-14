@@ -1,0 +1,49 @@
+{
+  "name": "Item",
+  "fields": [
+    {
+      "fieldName": "descriptionOfGoods",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hsCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "unit",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "manufactringCostStmtId",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "manufactringCostStmt",
+      "otherEntityRelationshipName": "item",
+      "relationshipName": "manufactringCostStmtId",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200814072201",
+  "entityTableName": "item",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

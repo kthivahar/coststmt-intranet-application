@@ -47,6 +47,9 @@ public class CacheConfiguration {
             createCache(cm, sg.gov.tech.sao.customs.intranet.coststmt.domain.User.class.getName());
             createCache(cm, sg.gov.tech.sao.customs.intranet.coststmt.domain.Authority.class.getName());
             createCache(cm, sg.gov.tech.sao.customs.intranet.coststmt.domain.User.class.getName() + ".authorities");
+            createCache(cm, sg.gov.tech.sao.customs.intranet.coststmt.domain.ManufactringCostStmt.class.getName());
+            createCache(cm, sg.gov.tech.sao.customs.intranet.coststmt.domain.ManufactringCostStmt.class.getName() + ".items");
+            createCache(cm, sg.gov.tech.sao.customs.intranet.coststmt.domain.Item.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

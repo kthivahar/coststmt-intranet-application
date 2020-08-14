@@ -1,0 +1,42 @@
+entity ManufactringCostStmt {
+	id String,
+	companyName String,
+    uniqueEntityNumberUen String,
+    address String,
+    nameOfContactPerson String,
+    designation String,
+    contactNo String,
+    email String,
+    exporterCompanyName String,
+    exporterAddress String,
+    euCompanyName String,
+    address String,
+    country String,
+    radio1 String
+}
+
+entity Item {
+	descriptionOfGoods String,
+    hsCode String,
+    unit String,
+	quantity Long,
+    value Double, 
+    manufactringCostStmtId String
+}
+
+relationship OneToMany {
+	ManufactringCostStmt to Item{manufactringCostStmtId},
+}
+
+// Set pagination options
+paginate Item with infinite-scroll
+paginate  ManufactringCostStmt with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
