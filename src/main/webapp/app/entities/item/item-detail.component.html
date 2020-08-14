@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="item">
+            <h2><span jhiTranslate="costStmtIntranetApplicationApp.item.detail.title">Item</span> {{ item.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="costStmtIntranetApplicationApp.item.descriptionOfGoods">Description Of Goods</span></dt>
+                <dd>
+                    <span>{{ item.descriptionOfGoods }}</span>
+                </dd>
+                <dt><span jhiTranslate="costStmtIntranetApplicationApp.item.hsCode">Hs Code</span></dt>
+                <dd>
+                    <span>{{ item.hsCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="costStmtIntranetApplicationApp.item.unit">Unit</span></dt>
+                <dd>
+                    <span>{{ item.unit }}</span>
+                </dd>
+                <dt><span jhiTranslate="costStmtIntranetApplicationApp.item.quantity">Quantity</span></dt>
+                <dd>
+                    <span>{{ item.quantity }}</span>
+                </dd>
+                <dt><span jhiTranslate="costStmtIntranetApplicationApp.item.value">Value</span></dt>
+                <dd>
+                    <span>{{ item.value }}</span>
+                </dd>
+                <dt><span jhiTranslate="costStmtIntranetApplicationApp.item.manufactringCostStmtId">Manufactring Cost Stmt Id</span></dt>
+                <dd>
+                    <span>{{ item.manufactringCostStmtId }}</span>
+                </dd>
+                <dt><span jhiTranslate="costStmtIntranetApplicationApp.item.manufactringCostStmtId">Manufactring Cost Stmt Id</span></dt>
+                <dd>
+                    <div *ngIf="item.manufactringCostStmtId">
+                        <a [routerLink]="['/manufactring-cost-stmt', item.manufactringCostStmtId?.id, 'view']">{{ item.manufactringCostStmtId?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/item', item.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

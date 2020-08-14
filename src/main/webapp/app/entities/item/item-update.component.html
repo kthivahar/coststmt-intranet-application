@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-item-heading" jhiTranslate="costStmtIntranetApplicationApp.item.home.createOrEditLabel">Create or edit a Item</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="costStmtIntranetApplicationApp.item.descriptionOfGoods" for="field_descriptionOfGoods">Description Of Goods</label>
+                    <input type="text" class="form-control" name="descriptionOfGoods" id="field_descriptionOfGoods"
+                           formControlName="descriptionOfGoods"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="costStmtIntranetApplicationApp.item.hsCode" for="field_hsCode">Hs Code</label>
+                    <input type="text" class="form-control" name="hsCode" id="field_hsCode"
+                           formControlName="hsCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="costStmtIntranetApplicationApp.item.unit" for="field_unit">Unit</label>
+                    <input type="text" class="form-control" name="unit" id="field_unit"
+                           formControlName="unit"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="costStmtIntranetApplicationApp.item.quantity" for="field_quantity">Quantity</label>
+                    <input type="number" class="form-control" name="quantity" id="field_quantity"
+                           formControlName="quantity"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="costStmtIntranetApplicationApp.item.value" for="field_value">Value</label>
+                    <input type="number" class="form-control" name="value" id="field_value"
+                           formControlName="value"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="costStmtIntranetApplicationApp.item.manufactringCostStmtId" for="field_manufactringCostStmtId">Manufactring Cost Stmt Id</label>
+                    <input type="text" class="form-control" name="manufactringCostStmtId" id="field_manufactringCostStmtId"
+                           formControlName="manufactringCostStmtId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="costStmtIntranetApplicationApp.item.manufactringCostStmtId" for="field_manufactringCostStmtId">Manufactring Cost Stmt Id</label>
+                    <select class="form-control" id="field_manufactringCostStmtId" name="manufactringCostStmtId" formControlName="manufactringCostStmtId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="manufactringCostStmtOption.id === editForm.get('manufactringCostStmtId')!.value?.id ? editForm.get('manufactringCostStmtId')!.value : manufactringCostStmtOption" *ngFor="let manufactringCostStmtOption of manufactringcoststmts; trackBy: trackById">{{ manufactringCostStmtOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

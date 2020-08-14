@@ -1,0 +1,34 @@
+{
+  "costStmtIntranetApplicationApp": {
+    "manufactringCostStmt": {
+      "home": {
+        "title": "Manufactring Cost Stmts",
+        "createLabel": "Create a new Manufactring Cost Stmt",
+        "createOrEditLabel": "Create or edit a Manufactring Cost Stmt",
+        "notFound": "No Manufactring Cost Stmts found"
+      },
+      "created": "A new Manufactring Cost Stmt is created with identifier {{ param }}",
+      "updated": "A Manufactring Cost Stmt is updated with identifier {{ param }}",
+      "deleted": "A Manufactring Cost Stmt is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Manufactring Cost Stmt {{ id }}?"
+      },
+      "detail": {
+        "title": "Manufactring Cost Stmt"
+      },
+      "companyName": "Company Name",
+      "uniqueEntityNumberUen": "Unique Entity Number Uen",
+      "address": "Address",
+      "nameOfContactPerson": "Name Of Contact Person",
+      "designation": "Designation",
+      "contactNo": "Contact No",
+      "email": "Email",
+      "exporterCompanyName": "Exporter Company Name",
+      "exporterAddress": "Exporter Address",
+      "euCompanyName": "Eu Company Name",
+      "country": "Country",
+      "radio1": "Radio 1",
+      "item": "Item"
+    }
+  }
+}

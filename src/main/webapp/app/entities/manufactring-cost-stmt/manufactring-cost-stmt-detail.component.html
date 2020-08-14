@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="manufactringCostStmt">
+            <h2><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.detail.title">Manufactring Cost Stmt</span> {{ manufactringCostStmt.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.companyName">Company Name</span></dt>
+                <dd>
+                    <span>{{ manufactringCostStmt.companyName }}</span>
+                </dd>
+                <dt><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.uniqueEntityNumberUen">Unique Entity Number Uen</span></dt>
+                <dd>
+                    <span>{{ manufactringCostStmt.uniqueEntityNumberUen }}</span>
+                </dd>
+                <dt><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.address">Address</span></dt>
+                <dd>
+                    <span>{{ manufactringCostStmt.address }}</span>
+                </dd>
+                <dt><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.nameOfContactPerson">Name Of Contact Person</span></dt>
+                <dd>
+                    <span>{{ manufactringCostStmt.nameOfContactPerson }}</span>
+                </dd>
+                <dt><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.designation">Designation</span></dt>
+                <dd>
+                    <span>{{ manufactringCostStmt.designation }}</span>
+                </dd>
+                <dt><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.contactNo">Contact No</span></dt>
+                <dd>
+                    <span>{{ manufactringCostStmt.contactNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.email">Email</span></dt>
+                <dd>
+                    <span>{{ manufactringCostStmt.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.exporterCompanyName">Exporter Company Name</span></dt>
+                <dd>
+                    <span>{{ manufactringCostStmt.exporterCompanyName }}</span>
+                </dd>
+                <dt><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.exporterAddress">Exporter Address</span></dt>
+                <dd>
+                    <span>{{ manufactringCostStmt.exporterAddress }}</span>
+                </dd>
+                <dt><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.euCompanyName">Eu Company Name</span></dt>
+                <dd>
+                    <span>{{ manufactringCostStmt.euCompanyName }}</span>
+                </dd>
+                <dt><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.country">Country</span></dt>
+                <dd>
+                    <span>{{ manufactringCostStmt.country }}</span>
+                </dd>
+                <dt><span jhiTranslate="costStmtIntranetApplicationApp.manufactringCostStmt.radio1">Radio 1</span></dt>
+                <dd>
+                    <span>{{ manufactringCostStmt.radio1 }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/manufactring-cost-stmt', manufactringCostStmt.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
