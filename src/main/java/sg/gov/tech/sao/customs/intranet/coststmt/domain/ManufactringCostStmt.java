@@ -239,7 +239,7 @@ public class ManufactringCostStmt implements Serializable {
 
     public ManufactringCostStmt addItem(Item item) {
         this.items.add(item);
-        item.setManufactringCostStmtId(this);
+        item.setManufactringCostStmt(this);
         return this;
     }
 

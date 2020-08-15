@@ -44,7 +44,7 @@
                     <td>{{ item.manufactringCostStmtId }}</td>
                     <td>
                         <div *ngIf="item.manufactringCostStmtId">
-                            <a [routerLink]="['/manufactring-cost-stmt', item.manufactringCostStmtId?.id, 'view']" >{{ item.manufactringCostStmtId?.id }}</a>
+                            <a [routerLink]="['/manufactring-cost-stmt', item.manufactringCostStmt?.id, 'view']" >{{ item.manufactringCostStmt?.id }}</a>
                         </div>
                     </td>
                     <td class="text-right">

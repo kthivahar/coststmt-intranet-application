@@ -26,7 +26,6 @@ export class ItemUpdateComponent implements OnInit {
     quantity: [],
     value: [],
     manufactringCostStmtId: [],
-    manufactringCostStmtId: [],
   });
 
   constructor(
@@ -55,7 +54,6 @@ export class ItemUpdateComponent implements OnInit {
       quantity: item.quantity,
       value: item.value,
       manufactringCostStmtId: item.manufactringCostStmtId,
-      manufactringCostStmtId: item.manufactringCostStmtId,
     });
   }
 
@@ -82,7 +80,6 @@ export class ItemUpdateComponent implements OnInit {
       unit: this.editForm.get(['unit'])!.value,
       quantity: this.editForm.get(['quantity'])!.value,
       value: this.editForm.get(['value'])!.value,
-      manufactringCostStmtId: this.editForm.get(['manufactringCostStmtId'])!.value,
       manufactringCostStmtId: this.editForm.get(['manufactringCostStmtId'])!.value,
     };
   }

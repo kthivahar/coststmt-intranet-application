@@ -23,6 +23,7 @@
     "@ngx-translate/core": "12.1.2",
     "@ngx-translate/http-loader": "5.0.0",
     "bootstrap": "4.5.0",
+    "colorette": "^1.2.0",
     "moment": "2.27.0",
     "ng-jhipster": "0.14.0",
     "ngx-cookie-service": "3.0.4",
@@ -43,8 +44,8 @@
     "@typescript-eslint/eslint-plugin": "2.30.0",
     "@typescript-eslint/eslint-plugin-tslint": "2.30.0",
     "@typescript-eslint/parser": "2.30.0",
-    "autoprefixer": "9.8.4",
-    "browser-sync": "2.26.7",
+    "autoprefixer": "^9.8.6",
+    "browser-sync": "^2.26.12",
     "browser-sync-webpack-plugin": "2.2.2",
     "codelyzer": "5.2.2",
     "copy-webpack-plugin": "6.0.2",
@@ -121,5 +122,10 @@
   "jestSonar": {
     "reportPath": "target/test-results/jest",
     "reportFile": "TESTS-results-sonar.xml"
+  },
+  "resolutions": {
+    "dot-prop": ">=5.1.1",
+    "lodash": ">=4.17.19",
+    "serialize-javascript": ">=3.1.0"
   }
 }

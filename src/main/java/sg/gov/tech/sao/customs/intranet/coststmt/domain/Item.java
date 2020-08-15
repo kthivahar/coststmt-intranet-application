@@ -37,12 +37,12 @@ public class Item implements Serializable {
     @Column(name = "value")
     private Double value;
 
-    @Column(name = "manufactring_cost_stmt_id")
+    @Column(name = "manufactring_cost_stmt_id", insertable = false, updatable = false)
     private String manufactringCostStmtId;
 
     @ManyToOne
     @JsonIgnoreProperties(value = "items", allowSetters = true)
-    private ManufactringCostStmt manufactringCostStmtId;
+    private ManufactringCostStmt manufactringCostStmt;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -131,17 +131,17 @@ public class Item implements Serializable {
         this.manufactringCostStmtId = manufactringCostStmtId;
     }
 
-    public ManufactringCostStmt getManufactringCostStmtId() {
-        return manufactringCostStmtId;
+    public ManufactringCostStmt getManufactringCostStmt() {
+        return manufactringCostStmt;
     }
 
     public Item manufactringCostStmtId(ManufactringCostStmt manufactringCostStmt) {
-        this.manufactringCostStmtId = manufactringCostStmt;
+        this.manufactringCostStmt = manufactringCostStmt;
         return this;
     }
 
-    public void setManufactringCostStmtId(ManufactringCostStmt manufactringCostStmt) {
-        this.manufactringCostStmtId = manufactringCostStmt;
+    public void setManufactringCostStmt(ManufactringCostStmt manufactringCostStmt) {
+        this.manufactringCostStmt = manufactringCostStmt;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

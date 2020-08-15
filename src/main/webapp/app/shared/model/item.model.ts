@@ -8,7 +8,7 @@ export interface IItem {
   quantity?: number;
   value?: number;
   manufactringCostStmtId?: string;
-  manufactringCostStmtId?: IManufactringCostStmt;
+  manufactringCostStmt?: IManufactringCostStmt;
 }
 
 export class Item implements IItem {
@@ -20,6 +20,6 @@ export class Item implements IItem {
     public quantity?: number,
     public value?: number,
     public manufactringCostStmtId?: string,
-    public manufactringCostStmtId?: IManufactringCostStmt
+    public manufactringCostStmt?: IManufactringCostStmt
   ) {}
 }

@@ -35,10 +35,11 @@
                 <dt><span jhiTranslate="costStmtIntranetApplicationApp.item.manufactringCostStmtId">Manufactring Cost Stmt Id</span></dt>
                 <dd>
                     <div *ngIf="item.manufactringCostStmtId">
-                        <a [routerLink]="['/manufactring-cost-stmt', item.manufactringCostStmtId?.id, 'view']">{{ item.manufactringCostStmtId?.id }}</a>
+                        <a [routerLink]="['/manufactring-cost-stmt', item.manufactringCostStmt?.id, 'view']">{{ item.manufactringCostStmt?.id }}</a>
                     </div>
                 </dd>
             </dl>
+
 
             <button type="submit"
                     (click)="previousState()"
